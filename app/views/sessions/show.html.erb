@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<ul class="breadcrumb">
+  <li><%= link_to 'Home' , '/'%> <span class="divider">/</span></li>
+  <li><%= link_to @conference.title , @conference %> <span class="divider">/</span></li>  
+  <li class="active"><%= @session.title %></li>
+</ul>
+
+
+<%= render @session %>
+
+<%= link_to 'Back', @conference %>

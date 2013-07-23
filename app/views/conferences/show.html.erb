@@ -1,0 +1,33 @@
+<ul class="breadcrumb">
+  <li><%= link_to 'Home' , '/'%> <span class="divider">/</span></li>
+  <li class="active"><%= @conference.title %></li>
+</ul>
+
+<p id="notice"><%= notice %></p>
+
+<h2>Title:</h2>
+<p>
+  <%= @conference.title %>
+</p>
+
+<h2>Date:</h2>
+<p>
+  <%= @conference.date %>
+</p>
+
+<h2>Place:</h2>
+<p>
+  <%= @conference.place %>
+</p>
+
+<h2>Sessions:</h2>
+<p>
+
+<%= render partial: 'sessions/sessions', object: @conference.sessions %>
+
+</p>
+
+
+<%= link_to 'Add Session', new_conference_session_path(@conference), class: "btn btn-success" %> |
+<%= link_to 'Edit Conference', edit_conference_path(@conference), class: "btn btn-primary" %> |
+<%= link_to 'Back', conferences_path %>

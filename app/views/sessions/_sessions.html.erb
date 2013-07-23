@@ -1,0 +1,30 @@
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Start at</th>
+      <th>Time in minutes</th>
+      <th>Abstract</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% sessions.each do |session| %>
+    <tr>
+      <td><%= link_to session.title, conference_session_path(@conference, session) %></td>
+      <td><%= session.start_at %></td>
+      <td><%= session.time_in_minutes %></td>
+      <td><%= session.abstract %></td>
+      <td>
+      <div class="btn-group" data-toggle="buttons-checkbox">
+        <%= link_to 'Edit', edit_conference_session_path(@conference, session), class: "btn btn-primary" %>
+        <%= link_to 'Destroy',  conference_session_path(@conference, session), method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn btn-danger" %>
+      </div>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
